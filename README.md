@@ -1,4 +1,3 @@
-INITIAL COMMIT!
 # Authentication Project
 
 ## Topics
