@@ -16,9 +16,9 @@
     })
 
 // INDIVIDUAL ROUTES 
-    server.use('/registerRouter', registerRouter)
-    server.use('/loginRouter', loginRouter)
-    server.use('/usersRouter', usersRouter)
+    server.use('/api/register', registerRouter)
+    server.use('/api/login', loginRouter)
+    server.use('/api/users', usersRouter)
 
 // EXPORTS
     module.exports = server 
