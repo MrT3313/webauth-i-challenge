@@ -2,6 +2,9 @@
     const express = require('express')
 
 // ROUTERS
+    const registerRouter = require('./registerRouter')
+    const loginRouter = require('./loginRouter')
+    const usersRouter = require('./usersRouter')
 
 // SERVER
     const server = express()
@@ -13,6 +16,9 @@
     })
 
 // INDIVIDUAL ROUTES 
+    server.use('/registerRouter', registerRouter)
+    server.use('/loginRouter', loginRouter)
+    server.use('/usersRouter', usersRouter)
 
 // EXPORTS
     module.exports = server 
