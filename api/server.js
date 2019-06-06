@@ -2,9 +2,9 @@
     const express = require('express')
 
 // ROUTERS
-    const registerRouter = require('./registerRouter')
-    const loginRouter = require('./loginRouter')
-    const usersRouter = require('./usersRouter')
+    const registerRouter = require('./routers/registerRouter')
+    const loginRouter = require('./routers/loginRouter')
+    const usersRouter = require('./routers/usersRouter')
 
 // SERVER
     const server = express()

@@ -2,7 +2,7 @@
 const express = require('express')
 
 // KNEX version of DB
-    const DB_KNEX = require('../data/dbConfig.js')
+    const DB_KNEX = require('../../data/dbConfig.js')
 
 // ROUTER
     const router = express.Router()

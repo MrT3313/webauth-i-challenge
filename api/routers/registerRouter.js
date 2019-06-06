@@ -2,7 +2,10 @@
 const express = require('express')
 
 // KNEX version of DB
-    const DB_KNEX = require('../data/dbConfig')
+    const DB_KNEX = require('../../data/dbConfig.js')
+
+// MIDDLEWARE
+    const pwHash = require('../middleware/pwHash')
 
 // ROUTER
     const router = express.Router()
@@ -24,14 +27,16 @@ const express = require('express')
             "password": "STRING"
         }
     */
-    router.post('/', async (req,res) => {
+    router.post('/', pwHash, async (req,res) => {
     console.log('registerRouter POST/')
+    console.log('req.newUser', req.newUser)
 
+    const objToPass = req.newUser
+    console.log('object to pass', objToPass)
+    
     DB_KNEX('USERS')
-        .insert(req.body)
+        .insert(objToPass)
         .then( results => {
-            console.log(results)
-            
             res.status(200).json(results)
         })
         .catch( () => {
